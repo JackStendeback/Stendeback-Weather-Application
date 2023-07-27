@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    background: #0B666A;
+    color: #8BACAA;
+}
+
+.card-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    border: 1px solid black;
+    width: 35rem;
+}
+

@@ -1,2 +1,9 @@
 # Stendeback-Weather-Application
 An application used to track weather data across various cities, to know when you need to be prepared for changing conditions!
+
+This project was the first required of me that I really had to do a lot of research to understand! Implementing API's successfully into a self made application for the first time is not an easy task! I coded small bits at a time, and slowly got a better and better grasp at what this project was really asking of me. Getting a basic structure was my first order of business, in order to better visualize what I wanted the end product to look like. I then spent a lot of time trying to implement the open weather API into my code, and for it to work as planned when I console logged random cities, and recieved the information I desired. Once that was working, I connected the api data points to my own html classes, in order to present the data on screen for the user when a search was conducted. I then had to work on structuring the data into a grid, which I had not practiced before, so it was also a process in learning how to properly use it! Setting up the 5 day forecast was next, and again was a struggle at first, until I continued toying with the code and getting a better grasp/understanding of what it wanted from me. I then coded my application to save user data to local storage, and to show previous searches on the screen, and for the user to be able to press them to revisit previous searches. Final polishing touches to the UI was last, and then I finally had an application I was truly happy with! I learned a ton from this challenge, most of which I will continue to use in the rest of my projects in this course, as we continue to chug along!
+
+Link to deployed application: https://jackstendeback.github.io/Stendeback-Weather-Application
+
+Screenshots: 
+

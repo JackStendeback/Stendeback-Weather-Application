@@ -9,11 +9,22 @@ let weatherApp = {
     )
     // using .then to gather a response, parse it with json, and console log to test if weather data comes through, which it does when city paremeter is entered.
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => this.presentWeather(data));
 
     },
-    displayWeather: function(data) {
-
+    presentWeather: function(data) {
+        const { name } = data;
+        const { temp, humidity } = data.main;
+        const { speed } = data.wind;
+        console.log(name, temp, humidity, speed);
+        
+        // Adding query selectors to connect html classes to js/weather api, so when user searches for a city, correct information is shown on the screen.
+        document.querySelector(".city").innerText = name;
+        document.querySelector(".temp").innerText = "Temp: " + temp + " °F";
+        document.querySelector(".wind").innerText = "Wind: " + speed + " MPH";
+        document.querySelector(".humidity").innerText = "Humidity: " + humidity + " %";
+        
+        
     }
 };
 

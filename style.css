@@ -5,6 +5,7 @@
     min-height: 100px;
     background: #0B666A;
     color: #8BACAA;
+    gap: 2rem;
 }
 
 .card-body {
@@ -30,6 +31,7 @@
 .testimonial1 {
     border: 1px solid;
     grid-area: top;
+    margin-top: 1rem;
 }
 
 .testimonial2 {

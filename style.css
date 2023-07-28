@@ -16,11 +16,30 @@
     width: 35rem;
 }
 
-.testimonial {
-    border: 1px solid red;
-}
 
 .testimonial-grid {
     display: grid;
-
+    gap: 2rem;
+    grid-template-rows: 1fr 2.5fr 1fr;
+    grid-template-areas:
+    'top'
+    'middle'
+    'bottom';
 }
+
+.testimonial1 {
+    border: 1px solid;
+    grid-area: top;
+}
+
+.testimonial2 {
+   border: 1px solid;
+   grid-area: bottom;
+}
+
+
+.testimonial3 {
+    border: 1px solid;
+    grid-area: middle;
+}
+

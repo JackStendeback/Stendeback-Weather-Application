@@ -25,6 +25,14 @@ let weatherApp = {
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + " %";
         
         
+    },
+    // This function fetches weather data when entered into the search bar
+    search: function () {
+        this.fetchWeather(document.querySelector(".search-bar").value);
     }
 };
 
+// Added event listener to search bar button, so when prompted with a search request, relevant data is brought up on screen.
+document.querySelector(".search-btn").addEventListener("click", function() {
+    weatherApp.search();
+})

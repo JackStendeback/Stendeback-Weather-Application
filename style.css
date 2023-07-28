@@ -16,3 +16,11 @@
     width: 35rem;
 }
 
+.testimonial {
+    border: 1px solid red;
+}
+
+.testimonial-grid {
+    display: grid;
+
+}

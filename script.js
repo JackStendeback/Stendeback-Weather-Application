@@ -36,3 +36,10 @@ let weatherApp = {
 document.querySelector(".search-btn").addEventListener("click", function() {
     weatherApp.search();
 })
+
+// Added event for keyup(pressing enter on keyboard) so data shows up just like if you pressed the "Search" button.
+document.querySelector(".search-bar").addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
+        weatherApp.search();
+    }
+})

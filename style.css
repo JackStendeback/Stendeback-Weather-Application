@@ -51,31 +51,7 @@ body {
     width: 35rem;
 }
 
-
-.testimonial-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-rows: 1fr 2.5fr 1fr;
-    grid-template-areas:
-    'top'
-    'middle'
-    'bottom';
+.mini-container {
+    display: flex;
+    flex-direction: column;
 }
-
-.testimonial1 {
-    border: 1px solid;
-    grid-area: top;
-    margin-top: 1rem;
-}
-
-.testimonial2 {
-   border: 1px solid;
-   grid-area: bottom;
-}
-
-
-.testimonial3 {
-    border: 1px solid;
-    grid-area: middle;
-}
-

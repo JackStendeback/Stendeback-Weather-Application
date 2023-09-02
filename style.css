@@ -1,5 +1,8 @@
 body {
     background: linear-gradient(to bottom, #4CA1AF, #C4E17F, #F7DB4F, #EABE4F, #AB3B3A);
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
 }
 
 .header {
@@ -51,7 +54,9 @@ body {
     width: 35rem;
 }
 
-.mini-container {
+.container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

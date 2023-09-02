@@ -42,4 +42,69 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event) 
     if (event.key == "Enter") {
         weatherApp.search();
     }
-})
+});
+
+let forecastApp = {
+    apiKey: "a0d11f0271bb0d4bc1457a691cebeb38", 
+    fetchForecast: function(city) { 
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${this.apiKey}`)
+        .then(response => response.json())
+        .then(data => this.presentForecast(data));
+    },
+    presentForecast: function(data) {
+        const forecasts = data.list;
+        const forecastContainer = document.querySelector('.forecast-container');
+        forecastContainer.innerHTML = '';
+        
+        let dateTemps = {};
+        const currentDate = new Date().toLocaleDateString();
+        const futureDate = new Date();
+        futureDate.setDate(futureDate.getDate() + 5);
+        const futureDateString = futureDate.toLocaleDateString();
+    
+        for (let i = 0; i < forecasts.length; i++) {
+            const forecast = forecasts[i];
+            const temp = forecast.main.temp;
+            const date = new Date(forecast.dt * 1000).toLocaleDateString();
+    
+            if (date !== futureDateString) { // Skip the sixth day's data
+                if (!dateTemps[date]) {
+                    dateTemps[date] = [];
+                }
+                
+                dateTemps[date].push(temp);
+            }
+        }
+    
+        for (const [date, temps] of Object.entries(dateTemps)) {
+            const high = Math.max(...temps).toFixed(1);
+            const low = Math.min(...temps).toFixed(1);
+            const main = forecasts.find(f => new Date(f.dt * 1000).toLocaleDateString() === date).weather[0].main;
+            const description = forecasts.find(f => new Date(f.dt * 1000).toLocaleDateString() === date).weather[0].description;
+            
+            forecastContainer.innerHTML += `
+                <div class="forecast-item">
+                    <div class="date">${date}</div>
+                    <div class="main">${main}</div>
+                    <div class="high">High: ${high} °F</div>
+                    <div class="low">Low: ${low} °F</div>
+                </div>
+            `;
+        }
+    },
+    search: function() {
+        this.fetchForecast(document.querySelector(".search-bar").value);  // Fixed the function name
+    }
+};
+
+document.querySelector(".search-btn").addEventListener("click", function() {
+    weatherApp.search();
+    forecastApp.search();
+});
+
+document.querySelector(".search-bar").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        weatherApp.search();
+        forecastApp.search();
+    }
+});
